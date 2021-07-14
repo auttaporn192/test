@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
 
+import "./App.scss";
+import Login from "./Components/login/login";
+import Navbar from "./Components/Navbar";
+import Clocks from "./Components/Clocks";
+import { Switch, Route } from "react-router-dom";
+import 'font-awesome/css/font-awesome.min.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/clock" component={Clocks} />
+      </Switch>
     </div>
   );
 }
